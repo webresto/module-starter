@@ -4,8 +4,7 @@ module.exports = function (sails) {
   return {
     defaults: require("./defaults"),
     initialize: function initialize(cb) {
-      module.default(sails);
-      cb();
+      module.default(sails, cb);
     },
   };
 };
