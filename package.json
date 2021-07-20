@@ -1,5 +1,5 @@
 {
-  "name": "module-starter",
+  "name": "webresto-module-starter",
   "version": "1.0.0",
   "description": "Starter for sails hook with webpack",
   "main": "index.js",
