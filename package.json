@@ -14,6 +14,9 @@
   "dependencies": {
     "express": "^4.17.1"
   },
+  "webresto": {
+    "moduleSpecificationVersion" : "1.0"
+  },
   "sails": {
     "isHook": true,
     "hookName": "webresto-module-starter"
