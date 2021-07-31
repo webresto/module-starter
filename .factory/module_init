@@ -11,6 +11,7 @@ if (!process.argv[2]) {
 async function init(new_name) {
   const options = {
     files: process.cwd() + "/**",
+    disableGlobs: true,
     ignore: [
       process.cwd() + "/.factory/**/*",
       process.cwd() + "/node_modules/**",
