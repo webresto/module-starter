@@ -2,13 +2,19 @@
 "use strict";
 const replace = require("replace-in-file");
 
-if (!process.argv[2]){
-  throw "Name of new module undefined "
+if (!process.argv[2]) {
+  throw "Name of new module undefined ";
+} else {
+  console.log(`new_name: ${process.argv[2]}`)
 }
-  
+
 async function init(new_name) {
   const options = {
-    files: process.cwd()+"/**",
+    files: process.cwd() + "/**",
+    ignore: [
+      process.cwd() + "/.factory/**",
+      process.cwd() + "/node_modules/**",
+    ],
     from: /webresto-module-starter/g,
     to: new_name,
   };
@@ -17,7 +23,7 @@ async function init(new_name) {
     const results = await replace(options);
     console.log("Replacement results:", results);
   } catch (error) {
-    console.error('Error occurred:', error);
+    console.error("Error occurred:", error);
   }
 }
 
