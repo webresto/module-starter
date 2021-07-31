@@ -1,5 +1,11 @@
+#!/usr/bin/env node
+"use strict";
 const replace = require("replace-in-file");
 
+if (!process.argv[2]){
+  throw "Name of new module undefined "
+}
+  
 async function init(new_name) {
   const options = {
     files: process.cwd(),
@@ -15,4 +21,4 @@ async function init(new_name) {
   }
 }
 
-init(process.argv[0]);
+init(process.argv[2]);
