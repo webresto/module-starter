@@ -17,6 +17,7 @@ async function init(new_name) {
     ],
     from: /webresto-module-starter/g,
     to: new_name,
+    countMatches: true
   };
 
   try {
