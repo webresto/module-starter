@@ -11,8 +11,11 @@ if (!process.argv[2]) {
 async function init(new_name) {
   const options = {
     files: process.cwd() + "/**",
-    disableGlobs: false,
-    ignore: process.cwd() + "/\.factory/**",
+    dry: true,
+    ignore: [ 
+      process.cwd() + "/.factory/**",
+      process.cwd() + "/node_modules/**",
+    ],
     from: /webresto-module-starter/g,
     to: new_name,
     countMatches: true
