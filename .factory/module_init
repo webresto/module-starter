@@ -12,7 +12,7 @@ async function init(new_name) {
   const options = {
     files: process.cwd() + "/**",
     ignore: [
-      process.cwd() + "/.factory/**",
+      process.cwd() + "/.factory/**/*",
       process.cwd() + "/node_modules/**",
     ],
     from: /webresto-module-starter/g,
