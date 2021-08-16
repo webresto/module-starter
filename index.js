@@ -1,7 +1,7 @@
 "use strict";
 module.exports = function (sails) {
 
-  if (process.env.DEV === "T1RUE") {
+  if (process.env.DEV === "TRUE") {
     module = require("./src/initialize");
   } else {
     module = require("./dist/module");
