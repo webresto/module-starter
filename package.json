@@ -12,7 +12,6 @@
   "author": "webresto, xziy",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
   },
   "webresto": {
     "moduleSpecificationVersion" : "1.0"
