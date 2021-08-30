@@ -11,16 +11,15 @@
   "keywords": [],
   "author": "webresto, xziy",
   "license": "ISC",
-  "dependencies": {
-  },
   "webresto": {
-    "moduleSpecificationVersion" : "1.0"
+    "moduleSpecificationVersion": "1.0"
   },
   "sails": {
     "isHook": true,
     "hookName": "webresto-module-starter"
   },
   "devDependencies": {
+    "@webresto/core": "^0.9.5",
     "@types/chai": "^4.2.11",
     "@types/mocha": "^8.0.2",
     "@types/node": "^10.17.60",
