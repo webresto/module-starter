@@ -19,7 +19,8 @@ let attributes = {
   description: "string" as string
 }
 
-type Example = typeof attributes & ORM
+type attributes = typeof attributes;
+interface Example extends attributes, ORM {}
 export default Example
 
 let Model  =  {
