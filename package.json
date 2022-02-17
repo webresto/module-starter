@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Starter for sails hook with webpack",
   "main": "index.js",
+  "appId": "webresto-module-starter",
+  "icon": "<svg width=\"73\" height=\"73\" viewBox=\"0 0 73 73\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"73\" height=\"73\" rx=\"3\" fill=\"#ABBCC6\"/>\n</svg>",
   "types": "./src/index.d.ts",
   "scripts": {
     "test": "tsc && mocha -r ts-node/register '{,**/}*.test.ts'",
