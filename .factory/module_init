@@ -30,7 +30,7 @@ async function init(new_name) {
   try {
     const results = await replace(options);
     console.log("Replacement results:", results);
-    fs.unlinkSync(process.cwd()+"/.factory")
+    fs.rmSync(process.cwd()+"/.factory", { recursive: true, force: true });
   } catch (error) {
     console.error("Error occurred:", error);
   }
