@@ -20,7 +20,7 @@
     "hookName": "webresto-module-starter"
   },
   "devDependencies": {
-    "@webresto/core": "^0.9.5",
+    "@webresto/core": "^1.0.0",
     "@types/chai": "^4.2.11",
     "@types/mocha": "^8.0.2",
     "@types/node": "^10.17.60",
