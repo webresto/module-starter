@@ -2,6 +2,12 @@
 "use strict";
 const replace = require("replace-in-file");
 
+const fs = require("fs");
+
+if (fs.existsSync(process.cwd() + "/module_init")) {
+  throw "Please use this factory only in module root directory"
+}
+
 if (!process.argv[2]) {
   throw "Name of new module undefined ";
 } else {
@@ -24,6 +30,7 @@ async function init(new_name) {
   try {
     const results = await replace(options);
     console.log("Replacement results:", results);
+    fs.unlinkSync(process.cwd()+"/.factory")
   } catch (error) {
     console.error("Error occurred:", error);
   }
