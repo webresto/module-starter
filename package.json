@@ -8,7 +8,7 @@
   "scripts": {
     "test": "mocha -r ts-node/register test/bootstrap.ts './test/{,!(fixture)/**}/*.test.ts' --exit",
     "test:js": "mocha test/bootstrap.js './test/{,!(fixture)/**}/*.test.js' --exit",
-    "test:init": "cd ./test/fixture && npm i --no-package-lock --prefix ./ && cd -",
+    "test:init": "npm i && cd ./test/fixture && npm i --no-package-lock --prefix ./ && cd -",
     "build": "tsc ; browserify -x @webresto/core/libs/getEmitter -x @webresto/graphql/lib/graphqlHelper ./src/initialize.js --s module  --node --bare --no-detect-globals >  dist/module.js"
   },
   "keywords": [],
@@ -35,6 +35,7 @@
     "@types/uuid": "^8.0.0",
     "@types/waterline": "^0.13.4",
     "@webresto/core": "latest",
+    "@webresto/graphql": "latest",
     "browserify": "^17.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",

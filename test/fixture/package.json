@@ -5,7 +5,8 @@
   "description": "Sails test application",
   "keywords": [],
   "dependencies": {
-    "@webresto/core": "^1.0.0",
+    "@webresto/core": "file:../../node_modules/@webresto/core",
+    "@webresto/graphql": "file:../../node_modules/@webresto/graphql",
     "webresto-module-starter": "file:../..",
     "include-all": "^1.0.8",
     "rc": "^1.0.1",
