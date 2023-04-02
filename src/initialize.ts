@@ -1,7 +1,12 @@
 import * as sails from "typed-sails";
 import { HookTools } from "@webresto/core";
 import { resolve } from "path";
-import { setWhiteList } from "@webresto/graphql/lib/graphqlHelper"
+// import { setWhiteList } from "@webresto/graphql/lib/graphqlHelper"
+import afterHook from "./hook/afterHook";
+
+const requiredHooks = [
+  'restocore'
+];
 
 export default async function (sails: sails.default.Sails, cb) {
   // Make your code here ...
@@ -15,6 +20,6 @@ export default async function (sails: sails.default.Sails, cb) {
   // })
   
   await HookTools.default.bindModels(resolve(__dirname, "../modelORM"));
-  
+  HookTools.waitForHooks('iiko-rms-adapter', requiredHooks, afterHook); 
   cb();
 }
