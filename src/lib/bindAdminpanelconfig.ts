@@ -1,7 +1,7 @@
 export default function bindAdminpanelconfig () {
   let configAdminpanel = { 
     models:{ 
-      Example: {
+      example: {
         title: 'Example',
         model: 'example',
         fields: {
@@ -14,6 +14,6 @@ export default function bindAdminpanelconfig () {
   //  Merge config adminpanel
   if(sails.config.adminpanel && configAdminpanel){
     let models = {...sails.config.adminpanel.models}
-    sails.config.adminpanel.models = {...models, ...configAdminpanel}
+    sails.config.adminpanel.models = {...models, ...configAdminpanel.models}
   }
 }
