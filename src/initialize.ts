@@ -21,6 +21,6 @@ export default async function (sails: sails.default.Sails, cb) {
   // })
   
   await HookTools.default.bindModels(resolve(__dirname, "../modelORM"));
-  HookTools.waitForHooks('iiko-rms-adapter', requiredHooks, afterHook); 
+  HookTools.waitForHooks('webresto-module-starter', requiredHooks, afterHook); 
   cb();
 }
