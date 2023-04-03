@@ -22,6 +22,7 @@
     "hookName": "webresto-module-starter"
   },
   "devDependencies": {
+    "sails-adminpanel": "^2.5.0",
     "@42pub/typed-sails": "^1.0.0",
     "@types/bluebird": "^3.5.32",
     "@types/bluebird-global": "^3.5.12",
