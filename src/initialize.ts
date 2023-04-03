@@ -6,6 +6,7 @@ import { resolve } from "path";
 import afterHook from "./hook/afterHook";
 
 const requiredHooks = [
+  'adminpanel',
   'restocore'
 ];
 
@@ -21,6 +22,6 @@ export default async function (sails: sails.default.Sails, cb) {
   // })
   
   await HookTools.default.bindModels(resolve(__dirname, "../modelORM"));
-  HookTools.waitForHooks('webresto-module-starter', requiredHooks, afterHook); 
+  HookTools.default.waitForHooks('webresto-module-starter', requiredHooks, afterHook); 
   cb();
 }
