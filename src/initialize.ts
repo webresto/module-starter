@@ -21,7 +21,7 @@ export default async function (sails: sails.default.Sails, cb) {
   //   your_model_name: ['query', 'subscription']
   // })
   
-  await HookTools.default.bindModels(resolve(__dirname, "../modelORM"));
+  await HookTools.default.bindModels(resolve(__dirname, "../models"));
   HookTools.default.waitForHooks('webresto-module-starter', requiredHooks, afterHook); 
   cb();
 }
