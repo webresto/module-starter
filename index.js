@@ -12,5 +12,14 @@ module.exports = function (sails) {
     initialize: function initialize(cb) {
       module.default(sails, cb);
     },
+    /**
+     * Module manager has support method for start and stop module
+     */
+    // start: function(){
+    //   // TODO: Implement start 
+    // }
+    // stop: function(){
+    //   // TODO: Implement stop 
+    // }
   };
 };
