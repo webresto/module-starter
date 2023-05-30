@@ -17,7 +17,7 @@
     "sails-hook-orm": "^4.0.0",
     "sails-hook-stateflow": "^1.0.6",
     "sails-memory": "^0.10.7",
-    "banner-card": "file:../.."
+    "webresto-module-starter": "file:../.."
   },
   "scripts": {
     "debug": "node debug app.js",
