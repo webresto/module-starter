@@ -69,4 +69,9 @@ typings/
 .env
 
 #dist
-package-lock.json
+test/fixture/.tmp
+dist/module.js
+test/**/*.test.js
+.gitignore
+test/bootstrap.js
+models/*.js

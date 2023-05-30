@@ -5,6 +5,7 @@ export default function bindAdminpanelconfig () {
       example: {
         title: 'Example',
         model: 'example',
+        icon: "box",
         fields: {
           id: false,
         }
