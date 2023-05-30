@@ -6,6 +6,7 @@ import slugify from "slugify"; // present in core
 import { v4 as uuid } from "uuid";
 
 let attributes = {
+  id: "string",
   title: "string",
   slug: "string",
   amount: "number" as unknown as number,

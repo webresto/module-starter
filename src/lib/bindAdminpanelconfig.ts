@@ -1,5 +1,6 @@
+import { AdminpanelConfig } from "sails-adminpanel/interfaces/adminpanelConfig"
 export default function bindAdminpanelconfig () {
-  let configAdminpanel = { 
+  let configAdminpanel: AdminpanelConfig = { 
     models:{ 
       example: {
         title: 'Example',
