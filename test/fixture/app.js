@@ -20,7 +20,7 @@
  *   https://sailsjs.com/anatomy/app.js
  */
 process.env.DEV = "TRUE"
-
+process.env.PORT = "1337"
 
 // Ensure we're in the project directory, so cwd-relative paths work as expected
 // no matter where we actually lift from.

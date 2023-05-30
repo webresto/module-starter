@@ -6,6 +6,7 @@
   "appId": "webresto-module-starter",
   "types": "./src/index.d.ts",
   "scripts": {
+    "dev": "npx tsc --watch & npx nodemon ./test/fixture/app.js",
     "test": "mocha -r ts-node/register test/bootstrap.ts './test/{,!(fixture)/**}/*.test.ts' --exit",
     "test:js": "mocha test/bootstrap.js './test/{,!(fixture)/**}/*.test.js' --exit",
     "test:init": "npm i && cd ./test/fixture && npm i --no-package-lock --prefix ./ && cd -",
@@ -47,6 +48,6 @@
     "ts-node": "^10.7.0",
     "tslint": "^5.11.0",
     "typed-sails": "git+https://github.com/42pub/typed-sails.git",
-    "typescript": "^3.9.7"
+    "typescript": "^5.0.4"
   }
 }
