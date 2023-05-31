@@ -17,28 +17,25 @@ interface Example extends RequiredField<OptionalAll<attributes>, "id">, ORM {}
 export default Example;
 
 let Model = {
-  async beforeCreate(init: any, proceed: any) {
+  async beforeCreate(init: Example, proceed: any) {
     if (!init.id) {
       init.id = uuid();
     }
 
     if (!init.slug) {
-      init.slug = slugify(init.name);
+      init.slug = await getSlug(slugify(init.title));
     }
 
     // icrease 1 if slug present
-    async function getSlug(slug: string, salt?: number) {
-      let _slug = slug;
-      if (salt) _slug = slug + "-" + salt;
-
-      if (await Example.findOne({ slug: _slug })) {
-        getSlug(slug, salt + 1);
+    async function getSlug(slug: string) {
+      let count = await Example.count({ slug: {"contains": slug } })
+      if (count) {
+        return slug = slug + "-" +count;
       } else {
-        return slug + salt;
+        return slug;
       }
     }
-
-    await getSlug(init.slug);
+    
     return proceed();
   },
 };
