@@ -1,7 +1,7 @@
 import * as sails from "@42pub/typed-sails";
 
 // @ts-ignore
-import { HookTools } from "@webresto/core";
+import { HookTools } from "@webresto/core/libs/hookTools";
 import { resolve } from "path";
 
 import { setWhiteList } from "@webresto/graphql/lib/graphqlHelper"
