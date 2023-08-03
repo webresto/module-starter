@@ -1,6 +1,6 @@
 import ORM from "@webresto/core/interfaces/ORM";
 import ORMModel from "@webresto/core/interfaces/ORMModel";
-import {RequiredField, OptionalAll} from "@webresto/core/interfaces/toolsTS";
+import {RequiredField} from "@webresto/core/interfaces/toolsTS";
 
 import slugify from "slugify"; // present in core
 import { v4 as uuid } from "uuid";
@@ -13,7 +13,7 @@ let attributes = {
 };
 
 type attributes = typeof attributes;
-interface Example extends RequiredField<OptionalAll<attributes>, "id">, ORM {}
+interface Example extends RequiredField<Partial<attributes>, "id">, ORM {}
 export default Example;
 
 let Model = {
