@@ -1,5 +1,5 @@
 import ORM from "@webresto/core/interfaces/ORM";
-import ORMModel from "@webresto/core/interfaces/ORMModel";
+import { ORMModel } from "@webresto/core/interfaces/ORMModel";
 import {RequiredField} from "@webresto/core/interfaces/toolsTS";
 
 import slugify from "slugify"; // present in core
@@ -13,7 +13,7 @@ let attributes = {
 };
 
 type attributes = typeof attributes;
-interface Example extends RequiredField<Partial<attributes>, "id">, ORM {}
+interface Example extends attributes, ORM {}
 export default Example;
 
 let Model = {
@@ -47,5 +47,5 @@ module.exports = {
 };
 
 declare global {
-  const Example: typeof Model & ORMModel<Example>;
+  const Example: typeof Model & ORMModel<Example, "id" | "title">;
 }
