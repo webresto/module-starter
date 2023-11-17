@@ -1,3 +1,4 @@
+/// <reference path="../node_modules/@webresto/core/index.d.ts" />
 import "mocha";
 require("dotenv").config();
 var Sails = require("./fixture/node_modules/sails").Sails;
