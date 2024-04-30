@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= __('Product Card with Color Picker') %></title>
+    <style>
+        /* Main container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        /* Container for color picker */
+        .color-picker-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        /* Container for product card */
+        .product-card-container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles for product card */
+        .product-card {
+            width: 100%;
+            background-color: var(--primary-color); /* Main card background color */
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Styles for action button */
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: var(--secondary-color); /* Secondary button color */
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: darken(var(--secondary-color), 10%); /* Darken on hover */
+        }
+
+        /* Styles for image */
+        .product-image {
+            width: 100%;
+            height: auto;
+            border: 5px solid; /* Border color around the card */
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Container for color picker -->
+    <div class="color-picker-container">
+        <h2 class="text-xl font-semibold mb-4"><%= __('Color Selection') %></h2>
+
+        <!-- Form for color selection -->
+        <form id="colorForm">
+            <!-- Field for primary color selection -->
+            <div class="mb-4">
+                <label for="primaryColor" class="block text-sm font-medium text-gray-700"><%= __('Primary Color:') %></label>
+                <input type="color" id="primaryColor" name="primaryColor" class="mt-1 block w-full" value="#f5f5f5">
+            </div>
+
+            <!-- Field for secondary color selection -->
+            <div class="mb-4">
+                <label for="secondaryColor" class="block text-sm font-medium text-gray-700"><%= __('Secondary Color:') %></label>
+                <input type="color" id="secondaryColor" name="secondaryColor" class="mt-1 block w-full" value="#8252f4">
+            </div>
+
+            <!-- Field for minor color selection -->
+            <div class="mb-4">
+                <label for="minorColor" class="block text-sm font-medium text-gray-700"><%= __('Minor Color:') %></label>
+                <input type="color" id="minorColor" name="minorColor" class="mt-1 block w-full" value="#191d32">
+            </div>
+        </form>
+    </div>
+
+    <!-- Container for product card -->
+    <div class="product-card-container" id="productCardContainer">
+        <!-- Product card -->
+        <div class="product-card" id="productCard">
+            <img src="http://loremflickr.com/280/180/food" alt="Product Image" class="product-image" id="productImage">
+            <h3 style="margin-top: 10px;"><%= __('Product Name') %></h3>
+            <p><%= __('Price: $19.99') %></p>
+            <button class="action-button"><%= __('Buy Now') %></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to update product card colors
+    function updateProductCardColors() {
+        const primaryColor = document.getElementById('primaryColor').value;
+        const secondaryColor = document.getElementById('secondaryColor').value;
+        const minorColor = document.getElementById('minorColor').value;
+
+        // Set product card colors
+        const productCard = document.getElementById('productCard');
+        const productImage = document.getElementById('productImage');
+        productCard.style.backgroundColor = primaryColor;
+        productImage.style.borderColor = minorColor;
+
+        const actionButton = productCard.querySelector('.action-button');
+        actionButton.style.backgroundColor = secondaryColor;
+    }
+
+    // Update product card when colors change
+    document.getElementById('primaryColor').addEventListener('input', updateProductCardColors);
+    document.getElementById('secondaryColor').addEventListener('input', updateProductCardColors);
+    document.getElementById('minorColor').addEventListener('input', updateProductCardColors);
+
+    // Initialize on page load
+    updateProductCardColors(); // Update product card with initial colors
+</script>
+
+</body>
+</html>

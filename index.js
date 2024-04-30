@@ -1,3 +1,4 @@
+/// <reference path="../types/globalTypes.d.ts" />
 "use strict";
 module.exports = function (sails) {
 

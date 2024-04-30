@@ -1,3 +1,4 @@
+/// <reference path="../types/globalTypes.d.ts" />
 import * as sails from "@42pub/typed-sails";
 
 // @ts-ignore
